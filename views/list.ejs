@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title></title>
   </head>
@@ -12,6 +13,22 @@
     else { %>
       <h1 style="color: blue"><%=theday%>'s List</h1>
     <%}%>
-<h2>The Agenda for <%=todaymonth%>/<%=todaydate%>/<%=todayyear%> is:</h2>
+<h2>The Agenda for today is:</h2>
+
+<!-- THIS IS AN EJS LIST CREATOR! -->
+<ul>
+  <%for (var i =0; i<newListItems.length; i++){%>
+    <li>
+      <%=newListItems[i]%>
+    </li>
+  <%}%>
+</ul>
+<form class="" action="/" method="post">
+  <input type="text" name="actionItem" value="">
+  <button type="submit" name="submit">Add to List</button>
+
+</form>
+<!-- CLOSE EJS LIST CREATOR -->
+
   </body>
 </html>
