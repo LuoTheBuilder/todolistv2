@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
 
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
 
-    <% if (kindOfDay==="saturday" || kindOfDay === "sunday"){ %>
-      <h1 style="color: purple"><%=theday%>'s List</h1>
-  <%  }
-    else { %>
-      <h1 style="color: blue"><%=theday%>'s List</h1>
-    <%}%>
-<h2>The Agenda for today is:</h2>
+<body>
+<img class="minicon" src="images/mountcov.png">
+  <div class="box" id="heading">
+    <h1><%=theday%></h1>
 
-<!-- THIS IS AN EJS LIST CREATOR! -->
-<ul>
+  </div>
+
+  <div class="box">
+
+
+
+    <!-- THIS IS AN EJS LIST CREATOR! -->
+
   <%for (var i =0; i<newListItems.length; i++){%>
-    <li>
-      <%=newListItems[i]%>
-    </li>
+    <div class="item">
+    <input type="checkbox">
+    <p><%=newListItems[i]%>
+  </p>
+  </div>
   <%}%>
-</ul>
-<form class="" action="/" method="post">
-  <input type="text" name="actionItem" value="">
-  <button type="submit" name="submit">Add to List</button>
+
+<form class="item" action="/" method="post">
+  <input type="text" name="actionItem" value="" placeholder="New Item" autocomplete="off">
+  <button type="submit"  name="submit">+</button>
 
 </form>
+
+</div>
+<img class="mount" src="images/mountains.png">
 <!-- CLOSE EJS LIST CREATOR -->
 
   </body>
