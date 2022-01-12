@@ -8,6 +8,9 @@ app.set('view engine', 'ejs');
 app.get("/", function(req, res) {
   var today = new Date();
   var currentDay = today.getDay();
+  var currentDate = today.getDate();
+  var currentMonth = today.getMonth() + 1;
+  var currentYear = today.getFullYear();
   var day = "";
 
   switch (currentDay) {
@@ -42,7 +45,10 @@ app.get("/", function(req, res) {
   }
   res.render('list', {
     kindOfDay: day,
-    theday: theday
+    theday: theday,
+    todaydate: currentDate,
+    todaymonth: currentMonth,
+    todayyear: currentYear
   })
 
 })
