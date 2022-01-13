@@ -8,10 +8,10 @@
 </head>
 
 <body>
-<img class="minicon" src="images/mountcov.png">
+  <img class="minicon" src="images/mountcov.png">
   <div class="box" id="heading">
     <h1><%=listTitle%></h1>
-<h3>The <%=adj%> To-Do List</h3>
+    <h3>The <%=adj%> To-Do List</h3>
 
   </div>
 
@@ -19,13 +19,13 @@
 
 
 
-  <%for (var i =0; i<newListItems.length; i++){%>
+    <%for (var i =0; i<newListItems.length; i++){%>
     <div class="item">
-    <input type="checkbox">
-    <p><%=newListItems[i]%>
-  </p>
-  </div>
-  <%}%>
+      <input type="checkbox">
+      <p><%=newListItems[i]%>
+      </p>
+    </div>
+    <%}%>
 
 <form class="item" action="/" method="post">
   <input type="text" name="actionItem" value="" placeholder="New Item" autocomplete="off">
