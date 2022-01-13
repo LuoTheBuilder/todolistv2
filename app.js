@@ -31,7 +31,7 @@ var desc = "";
             //FINISH SET UP OF INITIAL VARIABLES
 
 //GET PAGE FUNCTION
-app.get("/", function(req, res) {
+app.get("", function(req, res) {
 var theday = today.toLocaleDateString("en-US", options);
   res.render('list', {
     adj: desc,
@@ -43,7 +43,7 @@ var theday = today.toLocaleDateString("en-US", options);
 //CLOSE OUT GET PAGE FUNCTION
 
 //POST NEW ITEM FORM FUNCTION
-app.post("/", function(req, res){
+app.post("", function(req, res){
   item = req.body.actionItem;
   items.push(item);
   res.redirect("/");
@@ -51,7 +51,7 @@ app.post("/", function(req, res){
 //CLOSE POST NEW ITEM FORM FUNCTION
 
           //SERVER LISTENER
-          app.listen(3000, function(req, res) {
+          app.listen(process.env.PORT || 3000, function(req, res) {
             console.log('Alive!');
           })
           //CLOSE OUT LISTENER
