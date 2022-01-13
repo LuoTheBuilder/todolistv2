@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // var item="happy";
 var items =[];
 var desc = "";
+let workItems=[];
+let adj =[];
 //CLOSE SET UP OF STARTING CONSTANTS
 
             //SET UP API FOR ADJECTIVES
@@ -36,9 +38,23 @@ var theday = today.toLocaleDateString("en-US", options);
   res.render('list', {
     adj: desc,
     kindOfDay: day,
-    theday: theday,
+    listTitle: theday,
     newListItems: items
   })
+})
+
+app.get("/work", function(req, res) {
+  res.render("list", {
+    listTitle: "Work List",
+    newListItems: workItems,
+    adj: desc,
+  });
+});
+
+app.post("/work", function(req, res){
+  let item = req.body.newItem;
+  workItems.push(item);
+  res.redirect("/work");
 })
 //CLOSE OUT GET PAGE FUNCTION
 

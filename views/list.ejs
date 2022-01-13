@@ -10,8 +10,8 @@
 <body>
 <img class="minicon" src="images/mountcov.png">
   <div class="box" id="heading">
-    <h1><%=theday%></h1>
-    <h3>The <%=adj%> To-Do List</h3>
+    <h1><%=listTitle%></h1>
+<h3>The <%=adj%> To-Do List</h3>
 
   </div>
 
@@ -19,19 +19,6 @@
 
 
 
-    <!-- THIS IS AN EJS LIST CREATOR! -->
-
-
-    <!-- <%for (var i =0; i<newListItems.length; i++){%>
-      <div class="item">
-      <input type="checkbox">
-      <p>
-        <form class="" action="/" method="post">
-          <input type="text" name="<%=newListItems[i]%>" value="" placeholder="<%=newListItems[i]%>">
-        </form>
-    </p>
-    </div>
-    <%}%> -->
   <%for (var i =0; i<newListItems.length; i++){%>
     <div class="item">
     <input type="checkbox">
