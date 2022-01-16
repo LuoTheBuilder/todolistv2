@@ -70,7 +70,7 @@ var options = {
 
 
 //GET PAGE FUNCTION
-app.get("", function(req, res) {
+app.get("/", function(req, res) {
   var theday = today.toLocaleDateString("en-US", options);
   Item.find({}, function(err, items) {
     res.render('list', {
@@ -95,7 +95,7 @@ app.post("/delete", function(req, res){
 
 
 //POST NEW ITEM FORM FUNCTION
-app.post("", function(req, res) {
+app.post("/", function(req, res) {
   item = req.body.actionItem;
   const addItem = new Item({
     name: item,
