@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect('mongodb://localhost:27017/noteDB');
+mongoose.connect('mongodb+srv://admin-robbie:WorldChef1@cluster0.08v0x.mongodb.net/todolistDB');
 
 
 // var item="happy";
