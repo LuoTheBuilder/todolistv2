@@ -73,12 +73,14 @@ var options = {
 app.get("/", function(req, res) {
   var theday = today.toLocaleDateString("en-US", options);
   Item.find({}, function(err, items) {
+    if (err){console.log(err)}
+    else{
     res.render('list', {
       adj: adj,
       kindOfDay: day,
       listTitle: theday,
       newListItems: items
-    })
+    })}
   })
 })
 //CLOSE OUT GET PAGE FUNCTION
