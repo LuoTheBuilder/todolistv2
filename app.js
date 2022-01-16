@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -20,28 +20,8 @@ var adj = "";
 
 const itemSchema = new mongoose.Schema({
   name: String,
-})
+});
 const Item = mongoose.model("Item", itemSchema);
-
-// const note1 = new Item({
-//   name: "get a nice night"
-// })
-//
-// const note2 = new Item({
-//   name: "get a bad night"
-// })
-//
-// const note3 = new Item({
-//   name: "get a mediocre night"
-// })
-//
-// // Item.insertMany([note1, note2, note3]);
-// getNotes();
-
-
-
-
-
 
 
 //SET UP API FOR ADJECTIVES
@@ -50,7 +30,7 @@ https.get(url, function(response) {
   response.on("data", function(data) {
     adj = JSON.parse(data);
   })
-})
+});
 //END API SETUP
 
 
@@ -104,7 +84,7 @@ app.post("/", function(req, res) {
   })
   addItem.save();
   res.redirect("/");
-})
+});
 //CLOSE POST NEW ITEM FORM FUNCTION
 
 
