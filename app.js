@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect('mongodb+srv://admin-robbie:WorldChef1@cluster0.08v0x.mongodb.net/todolistDB');
+mongoose.connect('<insert URL>');
 
 
 // var item="happy";
